@@ -1,0 +1,43 @@
+{
+  "BTTPresetName" : "Cryptotool: ETH",
+  "BTTPresetUUID" : "385E117E-BAF5-4DD6-98BE-EA0548F58F8F",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTTriggers" : [
+        {
+          "BTTWidgetName" : "ETH data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 1,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "231.398326, 236.270623, 237.447465, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap ethereum\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "251.717067, 54.579648, 37.108550, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTTriggers" : [
+
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}

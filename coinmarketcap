@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# bitcoin
+# ethereum
+# litecoin
+# monero
+# neo
+# iota
+# omisego
+# eos
+# cardano
+
+CACHE_DIR=$HOME/.cache/cryptotool
+CACHE_BUST=5 # 10 minutes
+
+START_TIME=$(date +%s)
+
+function ensure_cache_dir() {
+  if [ ! -d $CACHE_DIR ]; then
+    mkdir -p $CACHE_DIR
+  fi
+}
+
+function in_cache() {
+  # Check if file is in the cache directory
+  if ! [ -f $1 ]; then
+    return 1
+  fi
+
+  local created_at=$(stat -f %m $1)
+  local elapsed_time=$(echo "$START_TIME - $created_at" | bc -l)
+
+  # Check if cache is valid
+  [ $elapsed_time -lt $CACHE_BUST ]
+}
+
+function api_url() {
+  echo "https://api.coinmarketcap.com/v1/ticker/$@/?convert=EUR"
+}
+
+function get_json_from() {
+  local file_path="$CACHE_DIR/$@"
+
+  if in_cache $file_path; then
+    cat $file_path
+  else
+    curl -s `api_url $1` | tee $file_path
+  fi
+}
+
+function parse_json() {
+  usd_price=$(echo $@ \
+    | sed -E 's/.*"price_usd": "([0-9]+.[0-9]{0,2})[0-9]*",.*/\1/')
+
+  eur_price=$(echo $@ \
+    | sed -E 's/.*"price_eur": "([0-9]+.[0-9]{0,2})[0-9]*",.*/\1/')
+
+  symbol=$(echo $@ \
+    | sed -E 's/.*"symbol": "([a-zA-Z0-9]+)",.*/\1/')
+
+  change=$(echo $@ \
+    | sed -E 's/.*"percent_change_24h": "(-?[0-9.]+)",.*/\1/')
+
+  if [[ $DEBUG -eq "1" ]]; then
+    echo "Symbol: $symbol"
+    echo "USD Price: $usd_price"
+    echo "EUR Price: $eur_price"
+    echo "24h Change: $change%"
+  fi
+
+  echo "$symbol:$usd_price:$eur_price:$change"
+}
+
+ensure_cache_dir
+
+json=`get_json_from $1`
+parse_json $json

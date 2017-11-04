@@ -1,0 +1,211 @@
+{
+  "BTTPresetName" : "Cryptotool",
+  "BTTPresetUUID" : "385E117E-BAF5-4DD6-98BE-EA0548F58F8F",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTTriggers" : [
+        {
+          "BTTWidgetName" : "ETH data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 1,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "231.398326, 236.270623, 237.447465, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap ethereum\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "251.717067, 54.579648, 37.108550, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "XMR Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 3,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "59.242857, 59.241082, 59.242081, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap monero\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+FC3725\n",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "BTC data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 0,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "255.000000, 153.000000, 0.000000, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap bitcoin\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "OMG Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 5,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "255.000000, 254.993464, 254.997781, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap omisego\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "NEO Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 4,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "86.105865, 186.819073, 45.342359, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap neo\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "LTC Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 2,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "176.358493, 176.353219, 176.356213, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap litecoin\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "XRP Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 6,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "53.458784, 144.268850, 194.796411, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap ripple\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "- *\\d+.\\d+\n-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "MIOTA Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 7,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap iota\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+\n-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        },
+        {
+          "BTTWidgetName" : "EOS Data",
+          "BTTTriggerType" : 639,
+          "BTTTriggerTypeDescription" : "Apple Script Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTEnabled" : 1,
+          "BTTRequiredModifierKeys" : 917504,
+          "BTTOrder" : 8,
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarItemPadding" : 0,
+            "BTTTouchBarFreeSpaceAfterButton" : "5.000000",
+            "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
+            "BTTTouchBarAlwaysShowButton" : "0",
+            "BTTTouchBarAppleScriptString" : "set s to seconds of (current date)\rset value to do shell script \"sh ~\/Developer\/cryptotool\/coinmarketcap eos\"\rset symbol to do shell script \"echo \" & value & \" | cut -d ':' -f 1\"\rset usd to do shell script \"echo \" & value & \" | cut -d ':' -f 2\"\rset eur to do shell script \"echo \" & value & \" | cut -d ':' -f 3\"\rset change to do shell script \"echo \" & value & \" | cut -d ':' -f 4\"\r\r\r\rif s mod 9 < 3 then\r\t# return symbol & \" $\" & usd\r\treturn \"$\" & usd\rend if\r\rif s mod 9 < 6 then\r\t# return symbol & \" €\" & eur\r\treturn \"€\" & eur\rend if\r\r# return symbol & \" \" & change & \"%\"\rreturn change & \"%\"",
+            "BTTTouchBarColorRegex" : "-\\d+.\\d+",
+            "BTTTouchBarAlternateBackgroundColor" : "247.831077, 29.145565, 29.130008, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 3
+          }
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTTriggers" : [
+
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}
