@@ -1,5 +1,5 @@
 set s to seconds of (current date)
-set value to do shell script "sh ~/Developer/cryptotool/coinmarketcap bitcoin"
+set value to do shell script "sh ~/.cache/cryptotool/coinmarketcap bitcoin"
 set symbol to do shell script "echo " & value & " | cut -d ':' -f 1"
 set usd to do shell script "echo " & value & " | cut -d ':' -f 2"
 set eur to do shell script "echo " & value & " | cut -d ':' -f 3"

@@ -51,7 +51,9 @@ But any coin can be added, by anyone! Either [open an issue](https://github.com/
 
 ## Pretty icons
 
-By default you won't get any icons. But I have included a set of icons in the `img` directory just for you :heart: To use them, open BTT, select the script and simply drag the corresponding icon into the icon area like this:
+By default you won't get any icons. But I have included a set of icons in the `img` directory just for you :heart:
+
+To use them, open BTT, select the script and simply drag the corresponding icon into the icon area like this:
 
 ![icons](screenshots/icon.png)
 
